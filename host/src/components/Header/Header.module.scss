@@ -1,0 +1,31 @@
+@use '../../styles/mixins' as *;
+
+.header {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+.nav {
+  @include container;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--text-primary);
+  }
+
+  span {
+    font-weight: 500;
+  }
+}

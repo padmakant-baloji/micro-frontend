@@ -1,0 +1,23 @@
+{
+  "name": "micro-frontend-demo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:host\" \"npm run dev:remote\" ",
+    "dev:host": "cd host && npm run dev",
+    "dev:remote": "cd remote && npm run dev",
+    "build": "npm run build:host && npm run build:remote",
+    "build:host": "cd host && npm run build",
+    "build:remote": "cd remote && npm run build",
+    "preview": "concurrently \"npm run preview:host\" \"npm run preview:remote\" ",
+    "preview:host": "cd host && npm run preview",
+    "preview:remote": "cd remote && npm run preview",
+    "clean": "rm -rf node_modules host/node_modules remote/node_modules",
+    "setup": "npm install && concurrently \"npm run setup:host\" \"npm run setup:remote\" ",
+    "setup:host": "cd host && npm install",
+    "setup:remote": "cd remote && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
